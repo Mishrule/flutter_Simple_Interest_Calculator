@@ -158,47 +158,48 @@ class _SIFormState extends State<SIForm> {
                       ],
                     )),
                 Padding(
-                    padding: EdgeInsets.only(
-                        bottom: _minimumPadding, top: _minimumPadding),
-                    child: Row(
-                      children: <Widget>[
-                        Expanded(
-                          child: RaisedButton(
-                            color: Theme.of(context).accentColor,
-                            textColor: Theme.of(context).primaryColorDark,
-                            child: Text(
-                              'Calculate',
-                              textScaleFactor: 1.5,
-                            ),
-                            onPressed: () {
-                              setState(() {
-                                if (_formKey.currentState.validate()) {
-                                  this.displayResult = _calculateTotalReturns();
-                                }
-                              });
-                            },
+                  padding: EdgeInsets.only(
+                      bottom: _minimumPadding, top: _minimumPadding),
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: RaisedButton(
+                          color: Theme.of(context).accentColor,
+                          textColor: Theme.of(context).primaryColorDark,
+                          child: Text(
+                            'Calculate',
+                            textScaleFactor: 1.5,
                           ),
+                          onPressed: () {
+                            setState(() {
+                              if (_formKey.currentState.validate()) {
+                                this.displayResult = _calculateTotalReturns();
+                              }
+                            });
+                          },
                         ),
-                        Container(
-                          width: _minimumPadding * 5,
-                        ),
-                        Expanded(
-                          child: RaisedButton(
-                            color: Theme.of(context).primaryColorDark,
-                            textColor: Theme.of(context).primaryColorLight,
-                            child: Text(
-                              'Reset',
-                              textScaleFactor: 1.5,
-                            ),
-                            onPressed: () {
-                              setState(() {
-                                _reset();
-                              });
-                            },
+                      ),
+                      Container(
+                        width: _minimumPadding * 5,
+                      ),
+                      Expanded(
+                        child: RaisedButton(
+                          color: Theme.of(context).primaryColorDark,
+                          textColor: Theme.of(context).primaryColorLight,
+                          child: Text(
+                            'Reset',
+                            textScaleFactor: 1.5,
                           ),
+                          onPressed: () {
+                            setState(() {
+                              _reset();
+                            });
+                          },
                         ),
-                      ],
-                    )),
+                      ),
+                    ],
+                  ),
+                ),
                 Padding(
                   padding: EdgeInsets.all(_minimumPadding * 2),
                   child: Text(
